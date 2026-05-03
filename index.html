@@ -2,26 +2,112 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>hinacomics | Official</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hinacomics | Professional Assets</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { background-color: #0d1117; color: #c9d1d9; font-family: monospace; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .box { border: 1px solid #30363d; padding: 40px; background: #161b22; border-radius: 4px; min-width: 300px; }
-        h1 { font-size: 1.2rem; letter-spacing: 4px; color: #58a6ff; margin: 0 0 20px 0; }
-        .nav { font-size: 0.8rem; border-top: 1px solid #30363d; pt: 20px; margin-top: 20px; }
-        .nav a { color: #8b949e; text-decoration: none; display: block; margin: 5px 0; }
-        .nav a:hover { color: #58a6ff; }
-        .status { color: #238636; font-size: 0.7rem; margin-top: 30px; }
+        :root {
+            --bg-color: #050505;
+            --card-bg: rgba(22, 27, 34, 0.7);
+            --accent-blue: #58a6ff;
+            --border-color: #30363d;
+            --text-main: #c9d1d9;
+            --text-sub: #8b949e;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'JetBrains Mono', 'Segoe UI', monospace;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .bento-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(88, 166, 255, 0.1);
+        }
+
+        .header-card { grid-column: span 2; border-left: 4px solid var(--accent-blue); }
+
+        h1 { font-size: 1.5rem; letter-spacing: 5px; margin: 0; color: #fff; }
+        h2 { font-size: 1rem; color: var(--accent-blue); margin-top: 0; }
+        p { font-size: 0.85rem; color: var(--text-sub); line-height: 1.6; }
+
+        .status-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #238636;
+            border-radius: 50%;
+            margin-right: 8px;
+            box-shadow: 0 0 10px #238636;
+        }
+
+        .badge {
+            font-size: 0.7rem;
+            background: #21262d;
+            padding: 2px 8px;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            margin-right: 5px;
+        }
     </style>
 </head>
 <body>
-    <div class="box">
-        <h1>HINACOMICS</h1>
-        <div class="nav">
-            <a>> HinaHub : Observing...</a>
-            <a>> HinaJav : Recording...</a>
-            <a>> ProfitCalc : Calculating...</a>
+    <div class="bento-container">
+        <!-- メイン看板 -->
+        <div class="card header-card">
+            <h1>HINACOMICS</h1>
+            <p>> High-Performance Development & Asset Management</p>
+            <div style="font-size: 0.75rem;"><span class="status-dot"></span>SYSTEM ONLINE</div>
         </div>
-        <div class="status">● SYSTEM_READY_V1.0</div>
+
+        <!-- 各プロジェクトのカード -->
+        <div class="card">
+            <h2>HinaHub</h2>
+            <p>画像解析・自動観測システム。<br>AIローカル処理による高度な識別を実現。</p>
+            <span class="badge">Python</span><span class="badge">Local AI</span>
+        </div>
+
+        <div class="card">
+            <h2>HinaJav</h2>
+            <p>メディア記録・管理。HinaHubとの自動連携によりメタデータ登録を自動化。</p>
+            <span class="badge">Rust</span><span class="badge">Automation</span>
+        </div>
+
+        <div class="card">
+            <h2>ProfitCalc</h2>
+            <p>原価率・ROI・BEPを算出するプロフェッショナル向け経営ツール。</p>
+            <span class="badge">React</span><span class="badge">Business</span>
+        </div>
+
+        <div class="card">
+            <h2>Asset Specs</h2>
+            <p>メイン機: RTX 3060 / RAM 64GB<br>Storage: 10TB HDD + SSD Array</p>
+            <span class="badge">HardWare</span>
+        </div>
     </div>
 </body>
 </html>
